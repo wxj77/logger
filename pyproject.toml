@@ -13,7 +13,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 license = {text = "MIT"}
-dependencies = ["python-logstash>=0.4.8", "elasticsearch>=8.17.0", "aiologger>=0.7.0"]
+dependencies = ["python-logstash>=0.4.8", "elasticsearch>=8.17.0", "aiologger>=0.7.0", "requests>=2.32.3"]
 
 [project.urls]
 Homepage = "https://github.com/Maxinsights/logger.git"
