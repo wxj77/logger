@@ -5,7 +5,77 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:7d846aa6a6cd8e19055f92109fc007b58ef4777ce68a30bedf80d1d2bbb07dd0"
+content_hash = "sha256:df654a730b7c09eaef1c8d455962544c47193ba0d45176c6864d92dcfd98f7a1"
 
 [[metadata.targets]]
+requires_python = ">=3.10"
+
+[[package]]
+name = "aiologger"
+version = "0.7.0"
+requires_python = ">=3.7"
+summary = "Asynchronous logging for python and asyncio"
+groups = ["default"]
+files = [
+    {file = "aiologger-0.7.0.tar.gz", hash = "sha256:7a4d5c91b836b61e842a791071786a3d80d6b6fa46fb8fd8e73391253ecb72ac"},
+]
+
+[[package]]
+name = "certifi"
+version = "2024.12.14"
+requires_python = ">=3.6"
+summary = "Python package for providing Mozilla's CA Bundle."
+groups = ["default"]
+files = [
+    {file = "certifi-2024.12.14-py3-none-any.whl", hash = "sha256:1275f7a45be9464efc1173084eaa30f866fe2e47d389406136d332ed4967ec56"},
+    {file = "certifi-2024.12.14.tar.gz", hash = "sha256:b650d30f370c2b724812bee08008be0c4163b163ddaec3f2546c1caf65f191db"},
+]
+
+[[package]]
+name = "elastic-transport"
+version = "8.17.0"
 requires_python = ">=3.8"
+summary = "Transport classes and utilities shared among Python Elastic client libraries"
+groups = ["default"]
+dependencies = [
+    "certifi",
+    "urllib3<3,>=1.26.2",
+]
+files = [
+    {file = "elastic_transport-8.17.0-py3-none-any.whl", hash = "sha256:59f553300866750e67a38828fede000576562a0e66930c641adb75249e0c95af"},
+    {file = "elastic_transport-8.17.0.tar.gz", hash = "sha256:e755f38f99fa6ec5456e236b8e58f0eb18873ac8fe710f74b91a16dd562de2a5"},
+]
+
+[[package]]
+name = "elasticsearch"
+version = "8.17.0"
+requires_python = ">=3.8"
+summary = "Python client for Elasticsearch"
+groups = ["default"]
+dependencies = [
+    "elastic-transport<9,>=8.15.1",
+]
+files = [
+    {file = "elasticsearch-8.17.0-py3-none-any.whl", hash = "sha256:15965240fe297279f0e68b260936d9ced9606aa7ef8910b9b56727f96ef00d5b"},
+    {file = "elasticsearch-8.17.0.tar.gz", hash = "sha256:c1069bf2204ba8fab29ff00b2ce6b37324b2cc6ff593283b97df43426ec13053"},
+]
+
+[[package]]
+name = "python-logstash"
+version = "0.4.8"
+summary = "Python logging handler for Logstash."
+groups = ["default"]
+files = [
+    {file = "python-logstash-0.4.8.tar.gz", hash = "sha256:d04e1ce11ecc107e4a4f3b807fc57d96811e964a554081b3bbb44732f74ef5f9"},
+]
+
+[[package]]
+name = "urllib3"
+version = "2.3.0"
+requires_python = ">=3.9"
+summary = "HTTP library with thread-safe connection pooling, file post, and more."
+groups = ["default"]
+files = [
+    {file = "urllib3-2.3.0-py3-none-any.whl", hash = "sha256:1cee9ad369867bfdbbb48b7dd50374c0967a0bb7710050facf0dd6911440e3df"},
+    {file = "urllib3-2.3.0.tar.gz", hash = "sha256:f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"},
+]
