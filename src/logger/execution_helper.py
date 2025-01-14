@@ -15,6 +15,8 @@ import queue
 LOGSTASH_HOST = os.getenv("LOGSTASH_HOST", '192.168.1.219')
 LOGSTASH_PORT = os.getenv("LOGSTASH_PORT", 5000) # logger
 LOGSTASH_PORT_2 = os.getenv("LOGSTASH_PORT", 5002) # execution_times
+LOGSTASH_PORT_3 = os.getenv("LOGSTASH_PORT_3", 5003) # episode logger
+
 
 def create_logstash_socket(host, port):
     try:
@@ -118,6 +120,8 @@ class CustomFormatter(logging.Formatter):
         return super().format(record)
 
 
+
+
 # Configure the logger
 def get_logger():
     logger = logging.getLogger("PythonLogger")
@@ -139,9 +143,10 @@ def get_logger():
     logger.addHandler(console_handler)
     return logger
 
-logger = get_logger()
-
 logstash_client_2 = LogstashClient(LOGSTASH_HOST, LOGSTASH_PORT_2)
+episode_execution_log_logstash_client = LogstashClient(LOGSTASH_HOST, LOGSTASH_PORT_3)
+
+
 def log_execution_time(func):
     def wrapper(*args, **kwargs):
         start_time = time.time()
@@ -172,4 +177,3 @@ def log_execution_time(func):
             print(f"Error sending message to Logstash: {e}, {log_entry}")
         return result
     return wrapper
-
