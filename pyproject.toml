@@ -1,0 +1,29 @@
+[project]
+name = "logger"
+version = "0.1.0"
+authors = [
+    { name="Example Author", email="author@example.com" },
+    {name = "", email = "wei@maxinsights.ai"},
+]
+description = "Default template for PDM package"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = {text = "MIT"}
+license-files = ["LICEN[CS]E*"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/Maxinsights/logger.git"
+Issues = "https://github.com/Maxinsights/logger/issues"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
