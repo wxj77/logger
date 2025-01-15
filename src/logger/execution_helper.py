@@ -120,8 +120,6 @@ class CustomFormatter(logging.Formatter):
         return super().format(record)
 
 
-
-
 # Configure the logger
 def get_logger():
     logger = logging.getLogger("PythonLogger")
@@ -143,7 +141,8 @@ def get_logger():
     logger.addHandler(console_handler)
     return logger
 
-logstash_client_2 = LogstashClient(LOGSTASH_HOST, LOGSTASH_PORT_2)
+logger = get_logger()
+execution_times_logstash_client = LogstashClient(LOGSTASH_HOST, LOGSTASH_PORT_2)
 episode_execution_log_logstash_client = LogstashClient(LOGSTASH_HOST, LOGSTASH_PORT_3)
 
 
@@ -158,7 +157,7 @@ def log_execution_time(func):
             "ip_address": ip_address,
         }
             log_entry = json.dumps(data)
-            logstash_client_2.send(log_entry)
+            execution_times_logstash_client.send(log_entry)
         except Exception as e:
             print(f"Error sending message to Logstash: {e}, {log_entry}")
         result = func(*args, **kwargs)
