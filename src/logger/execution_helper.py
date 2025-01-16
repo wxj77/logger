@@ -171,7 +171,7 @@ def log_execution_time(func):
             "end_time": end_time,
         }
             log_entry = json.dumps(data)
-            logstash_client_2.send(log_entry)
+            execution_times_logstash_client.send(log_entry)
         except Exception as e:
             print(f"Error sending message to Logstash: {e}, {log_entry}")
         return result
