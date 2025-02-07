@@ -12,7 +12,7 @@ import threading
 import queue
 
 # Logstash host and port
-LOGSTASH_HOST = os.getenv("LOGSTASH_HOST", '192.168.1.219')
+LOGSTASH_HOST = os.getenv("LOGSTASH_HOST", '192.168.1.221')
 LOGSTASH_PORT = os.getenv("LOGSTASH_PORT", 5000) # logger
 LOGSTASH_PORT_2 = os.getenv("LOGSTASH_PORT", 5002) # execution_times
 LOGSTASH_PORT_3 = os.getenv("LOGSTASH_PORT_3", 5003) # episode logger
